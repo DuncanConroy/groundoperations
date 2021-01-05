@@ -21,7 +21,7 @@ data class Terminal(
             """Planes at the Terminal
             #| Stand | Callsign    |
             #|---------------------|
-            # TODO TODO TODO
+            #${planesToTable(planes)}
             #|---------------------|
         """.trimMargin("#")
         )
@@ -29,7 +29,7 @@ data class Terminal(
 
     fun getPlane(callsign: String) = planes.values.first { it.callsign.equals(callsign, ignoreCase = true) }
 
-    private fun printLine(stand: Int, plane: Plane): Nothing = TODO()
+    private fun printLine(stand: Int, plane: Plane) = "| ${stand.toString().padEnd(6)}| ${plane.callsign.padEnd(12)}|"
 
     private fun planesToTable(planes: Map<Int, Plane>): String {
         return planes

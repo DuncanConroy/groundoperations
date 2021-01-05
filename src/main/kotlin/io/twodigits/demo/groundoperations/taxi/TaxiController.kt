@@ -1,5 +1,6 @@
 package io.twodigits.demo.groundoperations.taxi
 
+import io.twodigits.demo.groundoperations.extensionfunctions.plus
 import io.twodigits.demo.groundoperations.facilities.Terminal
 import io.twodigits.demo.groundoperations.thirdparty.Cargo
 import io.twodigits.demo.groundoperations.thirdparty.Plane
@@ -37,19 +38,16 @@ class TaxiController(
 
     private fun addAutoTaxiRobot(plane: Plane) {
         val robot = Cargo()
-        // TODO plane + robot
+        plane + robot
         println("Cargo: ${plane.cargo}")
     }
 
-    private fun getStandardRoute(runway: Int) = TaxiNode(
-        "W",
-        next = TaxiNode(
-            "E",
-            "right",
-            TaxiNode(
-                "Y", "left",
+    private fun getStandardRoute(runway: Int): TaxiNode {
+        val route = TaxiNode("W")
+        route + TaxiNode("E", "right") +
+                TaxiNode("Y", "left") +
                 TaxiNode("/$runway", "left")
-            )
-        )
-    )
+
+        return route
+    }
 }

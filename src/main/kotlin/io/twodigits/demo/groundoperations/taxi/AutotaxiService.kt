@@ -1,6 +1,10 @@
 package io.twodigits.demo.groundoperations.taxi
 
+import io.twodigits.demo.groundoperations.extensionfunctions.Steering
+import io.twodigits.demo.groundoperations.extensionfunctions.steer
 import io.twodigits.demo.groundoperations.thirdparty.Plane
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import org.springframework.stereotype.Service
 
 @Service
@@ -14,7 +18,9 @@ class AutotaxiService {
 
     fun runTaxiLoop() {
         planes.map { it.toPair() }.forEach {
-            taxiPlane(it)
+            GlobalScope.launch {
+                taxiPlane(it)
+            }
         }
     }
 
@@ -25,9 +31,9 @@ class AutotaxiService {
         if (route?.next === null) return
 
         when (route.turn) {
-            "left" -> TODO()
-            "right" -> TODO()
-            else -> TODO()
+            "left" -> plane.steer(Steering.LEFT)
+            "right" -> plane.steer(Steering.RIGHT)
+            else -> plane.steer(Steering.STRAIGHT)
         }
         Thread.sleep(1500)
         println("${plane.callsign.toUpperCase()}, Taxiing on $route")
