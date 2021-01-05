@@ -1,10 +1,10 @@
-package io.twodigits.demo.groundprocedures
+package io.twodigits.demo.groundoperations
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class GroundproceduresApplicationTests {
+class GroundoperationsApplicationTests {
 
 	@Test
 	fun contextLoads() {

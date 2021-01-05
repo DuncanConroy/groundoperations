@@ -1,1 +1,1 @@
-rootProject.name = "groundprocedures"
+rootProject.name = "groundoperations"

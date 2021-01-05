@@ -1,11 +1,11 @@
-package io.twodigits.demo.groundprocedures
+package io.twodigits.demo.groundoperations
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class GroundproceduresApplication
+class GroundoperationsApplication
 
 fun main(args: Array<String>) {
-	runApplication<GroundproceduresApplication>(*args)
+	runApplication<GroundoperationsApplication>(*args)
 }
