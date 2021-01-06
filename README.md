@@ -39,3 +39,4 @@ This repository supports my talk on Kotlin on the 13th January 2021, which will 
     - AutoTaxiService
         -> Start execution
         -> Implement globalscope and re-execute
+        -> show refactoring
