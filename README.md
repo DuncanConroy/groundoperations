@@ -1,14 +1,14 @@
-#Ground operations with Kotlin - An introduction to the Kotlin programming language based on airport procedures
+# Ground operations with Kotlin - An introduction to the Kotlin programming language based on airport procedures
 This repository supports my talk on Kotlin on the 13th January 2021, which will be given for TwoDigits (Accenture) internally.
 ## Live-Coding
-###What's in place
+### What's in place
     - GroundoperationsApplication
     - Terminal
     - TaxiController
     - AutoTaxiSerivce
     - Plane extension (empty)
 
-###What to show
+### What to show
 	- GroundoperationsApplication
         -> SpringBootApplication annotation -> jump into source
         -> main fun is anonymous, not part of the GroundoperationsApplication - no brackets needed to define a class
