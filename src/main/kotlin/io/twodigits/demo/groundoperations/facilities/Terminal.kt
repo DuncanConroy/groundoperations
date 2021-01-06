@@ -7,12 +7,12 @@ import javax.annotation.PostConstruct
 @Component
 data class Terminal(
     val planes: MutableMap<Int, Plane> = mutableMapOf(
-        Pair(7, Plane("npt09h")),  // Neptune zero niner hotel
-        Pair(26, Plane("dLh404")), // Lufthansa four zero four
-        Pair(29, Plane("Klm308")), // K L M three zero eight
-        Pair(28, Plane("sas122")), // Scandinavian one two two
-        Pair(19, Plane("wzz543")), // Wizzair five four three
-        Pair(21, Plane("auA2Ty")), // Austrian two tango yankee
+        7 to Plane("npt09h"),  // Neptune zero niner hotel
+        26 to Plane("dLh404"), // Lufthansa four zero four
+        29 to Plane("Klm308"), // K L M three zero eight
+        28 to Plane("sas122"), // Scandinavian one two two
+        19 to Plane("wzz543"), // Wizzair five four three
+        21 to Plane("auA2Ty"), // Austrian two tango yankee
     )
 ) {
     @PostConstruct

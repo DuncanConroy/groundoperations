@@ -25,19 +25,23 @@ class AutotaxiService {
     }
 
     fun taxiPlane(planeRoute: Pair<Plane, TaxiNode?>) {
-        val plane = planeRoute.first
-        val route = planeRoute.second
+        val (plane, route) = planeRoute
 
-        if (route?.next === null) return
+        route?.next?.let {
 
-        when (route.turn) {
-            "left" -> plane.steer(Steering.LEFT)
-            "right" -> plane.steer(Steering.RIGHT)
-            else -> plane.steer(Steering.STRAIGHT)
+            when (route.turn) {
+                "left" -> plane.steer(Steering.LEFT)
+                "right" -> plane.steer(Steering.RIGHT)
+                else -> plane.steer(Steering.STRAIGHT)
+            }
+
+            val taxiTime = (Math.random() * 5000).toLong()
+            Thread.sleep(taxiTime)
+            println("${plane.callsign.toUpperCase()}($taxiTime), Taxiing on $route")
+
+            taxiPlane(plane to route.next)
+        } ?: run {
+            println("${plane.callsign.toUpperCase()}, ready for take-off at $route")
         }
-        Thread.sleep(1500)
-        println("${plane.callsign.toUpperCase()}, Taxiing on $route")
-
-        taxiPlane(Pair(plane, route.next))
     }
 }
