@@ -38,7 +38,7 @@ class TaxiController(
     private fun addAutoTaxiRobot(plane: Plane) {
         val robot = Cargo()
         // TODO plane + robot
-        println("Cargo: ${plane.cargo}")
+        println("Cargo: ${plane.cargo.size}")
     }
 
     private fun getStandardRoute(runway: Int) = TaxiNode(
