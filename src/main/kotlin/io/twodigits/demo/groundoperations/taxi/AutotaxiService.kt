@@ -24,11 +24,11 @@ class AutotaxiService {
 
         if (route?.next === null) return
 
-        when (route.turn) {
-            "left" -> TODO()
-            "right" -> TODO()
-            else -> TODO()
-        }
+//        when (route.turn) {
+//            "left" -> TODO()
+//            "right" -> TODO()
+//            else -> TODO()
+//        }
 
         val taxiTime = (Math.random() * 5000).toLong()
         Thread.sleep(taxiTime)
