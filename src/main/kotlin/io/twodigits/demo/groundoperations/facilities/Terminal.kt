@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component
 import javax.annotation.PostConstruct
 
 @Component
-data class Terminal(
+class Terminal(
     val planes: MutableMap<Int, Plane> = mutableMapOf(
         Pair(7, Plane("npt09h")),  // Neptune zero niner hotel
         Pair(26, Plane("dLh404")), // Lufthansa four zero four
@@ -15,6 +15,9 @@ data class Terminal(
         Pair(21, Plane("auA2Ty")), // Austrian two tango yankee
     )
 ) {
+
+    fun getPlane(callsign: String) = planes.values.first { it.callsign.equals(callsign, ignoreCase = true) }
+
     @PostConstruct
     fun initComplete() {
         println(
@@ -27,13 +30,11 @@ data class Terminal(
         )
     }
 
-    fun getPlane(callsign: String) = planes.values.first { it.callsign.equals(callsign, ignoreCase = true) }
-
-    private fun printLine(stand: Int, plane: Plane): Nothing = TODO()
-
     private fun planesToTable(planes: Map<Int, Plane>): String {
         return planes
-            .map { (a, b) -> printLine(a, b) }
+            .map { (stand, plane) -> printLine(stand, plane) }
             .joinToString("\n")
     }
+
+    private fun printLine(stand: Int, plane: Plane): Nothing = TODO()
 }

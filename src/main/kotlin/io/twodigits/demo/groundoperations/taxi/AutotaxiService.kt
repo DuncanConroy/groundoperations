@@ -19,8 +19,7 @@ class AutotaxiService {
     }
 
     fun taxiPlane(planeRoute: Pair<Plane, TaxiNode?>) {
-        val plane = planeRoute.first
-        val route = planeRoute.second
+        val (plane, route) = planeRoute
 
         if (route?.next === null) return
 
