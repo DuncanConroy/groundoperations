@@ -1,9 +1,9 @@
 package io.twodigits.demo.groundoperations
 
 // TODO:
+// - function definition
 // - mutable/immutable
 // - types, variable substitution
-// - function definition
 // - default parameters
 // - class definition
 // - plane object in java + kotlin
