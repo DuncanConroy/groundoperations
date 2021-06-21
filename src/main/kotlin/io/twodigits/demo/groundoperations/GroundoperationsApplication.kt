@@ -4,7 +4,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 // TODO:
-// - function definition
+// - function definition (with backticks)
 // - mutable/immutable
 // - types, variable substitution
 // - default parameters
