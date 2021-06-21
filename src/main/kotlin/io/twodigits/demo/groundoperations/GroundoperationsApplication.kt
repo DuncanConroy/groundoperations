@@ -6,6 +6,7 @@ import org.springframework.boot.runApplication
 // TODO:
 // - function definition (with backticks)
 // - mutable/immutable
+// - nullability
 // - types, variable substitution
 // - default parameters
 // - class definition
@@ -50,5 +51,5 @@ import org.springframework.boot.runApplication
 class GroundoperationsApplication
 
 fun main(args: Array<String>) {
-	runApplication<GroundoperationsApplication>(*args)
+    runApplication<GroundoperationsApplication>(*args)
 }
