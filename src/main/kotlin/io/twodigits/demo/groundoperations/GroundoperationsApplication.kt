@@ -1,5 +1,8 @@
 package io.twodigits.demo.groundoperations
 
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
+
 // TODO:
 // - function definition
 // - mutable/immutable
@@ -42,8 +45,6 @@ package io.twodigits.demo.groundoperations
 
 
 
-import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.boot.runApplication
 
 @SpringBootApplication
 class GroundoperationsApplication
