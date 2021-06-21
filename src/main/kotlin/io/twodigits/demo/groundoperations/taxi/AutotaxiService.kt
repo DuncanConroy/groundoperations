@@ -31,10 +31,10 @@ class AutotaxiService {
 
         val taxiTime = (Math.random() * 5000).toLong()
         Thread.sleep(taxiTime)
-        println("${plane.callsign.toUpperCase()}($taxiTime), Taxiing on $route")
+        println("${plane.callsign.toUpperCase()}, Taxiing on ${route.taxiway}, for ${taxiTime}ms")
 
         taxiPlane(Pair(plane, route.next))
 
-        if(route === null) println("${plane.callsign.toUpperCase()}, ready for take-off at $route")
+        if(route.next === null) println("${plane.callsign.toUpperCase()}, ready for take-off at $route")
     }
 }
