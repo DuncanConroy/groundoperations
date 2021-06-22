@@ -3,6 +3,10 @@ package io.twodigits.demo.groundoperations
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
+
+// Get started at https://kotlinlang.org/
+
+
 // TODO:
 // - function definition (with backticks)
 // - mutable/immutable
